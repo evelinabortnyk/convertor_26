@@ -1,0 +1,49 @@
+.navi-wrap{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+}
+
+.navi-container{
+    display: flex;
+    align-items: center;
+    
+    font-size: 16px;
+}
+.logo-wrap, .navi-btn{
+    width: 20%;
+
+}
+
+.logo-wrap > p{
+    font-weight: bold;
+}
+
+.logo-wrap > img{
+    margin-right: 10px;
+}
+
+.navigation{
+    justify-content: start;
+    width: 60%;
+}
+
+.navigation li{
+    list-style: none;
+    padding: 0 20px;
+}
+
+.navi-btn{
+    justify-content: end;
+}
+
+.navi-btn--icon{
+    background-image: url(./img/Vector.svg);
+    background-position: cover;
+    width: 20px;
+    height: 22px;
+    margin-right: 10px;
+}
