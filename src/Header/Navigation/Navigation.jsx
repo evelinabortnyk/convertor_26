@@ -1,0 +1,27 @@
+import logo from './img/logo.svg'
+import './navigation.css'
+
+function Navigation () {
+    const linksArr = [
+        {'title': 'Services', 'link' : ''},
+        {'title': 'Converter', 'link' : ''},
+        {'title': 'Contacts', 'link' : ''},
+        {'title': 'Questions', 'link' : ''},
+    ]
+
+    return (
+        <>
+            <div className="navi-wrap">
+                <div className="navi-container logo-wrap"><img src={logo} alt='logo' /><p>Chip Challenge</p></div>
+                <nav className='navi-container navigation'>
+                    {linksArr.map((link, index) => (
+                        <li key={index}><a href={link.link}>{link.title}</a></li>
+                    ))}
+                </nav>
+                <div className='navi-container navi-btn'><div className='navi-btn--icon'></div><p>Personal account</p></div>
+            </div>
+        </>
+    )
+}
+
+export default Navigation

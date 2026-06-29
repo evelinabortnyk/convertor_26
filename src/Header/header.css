@@ -1,0 +1,38 @@
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 20px 40px;
+
+    background-image: url(./img/background.png);
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+}
+
+h1{
+    font-size: 52px;
+}
+.header-main--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 216px;
+
+    color: #fff;
+}
+
+.header-main--container *{
+    padding-bottom: 20px;
+}
+.header-main--img{
+    max-width: 341px;;
+}
+.header-btn {
+    width: 234px;
+    height: 53px;
+    padding-bottom: 0;
+    color: var(--gray);
+}
