@@ -1,5 +1,8 @@
 body{
   font-family: "Roboto", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid var(--blay);
 }
 
 * {
@@ -10,6 +13,7 @@ body{
 
 :root {
   --gray: #707C87;
+  --blay: #2C36F2;
 }
 
 a{
@@ -19,6 +23,38 @@ a{
 a:hover{
   color: #2C36F2;
 }
+
 button:hover{
   cursor: pointer;
+}
+
+.blocks-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 20px 20vh;
+}
+
+h1{
+  font-size: 52px;
+}
+.block-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.block-wrap *{
+  padding-bottom: 20px;
+}
+
+.block-btn{
+  width: 234px;
+  height: 53px;
+  padding-bottom: 0;
+  border: none;
+  border-radius: 5px;
 }
