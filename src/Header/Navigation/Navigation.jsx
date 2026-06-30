@@ -18,7 +18,7 @@ function Navigation () {
                         <li key={index}><a href={link.link}>{link.title}</a></li>
                     ))}
                 </nav>
-                <div className='navi-container navi-btn'><div className='navi-btn--icon'></div><p>Personal account</p></div>
+                <a href='#' className='navi-container navi-btn'><div className='navi-btn--icon'></div>Personal account</a>
             </div>
         </>
     )
