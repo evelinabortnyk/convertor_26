@@ -7,13 +7,13 @@ function Header () {
     return (
         <header>
             <Navigation/>
-            <div className="header-main">
-                <div className="header-main--container">
+            <div className="blocks-container header-container">
+                <div className="block-wrap header-block">
                     <h1>Chip Challenge</h1>
                     <p>Currency Exchanger - Educational</p>
-                    <button className="header-btn">Currency converter</button>
+                    <button className="block-btn header-btn">Currency converter</button>
                 </div>
-                <img src={card} alt="card"  className="header-main--container header-main--img"/>
+                <img src={card} alt="card"  className="block-wrap header-img"/>
             </div>
         </header>
     )
