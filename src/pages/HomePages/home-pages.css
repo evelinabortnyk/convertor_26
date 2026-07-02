@@ -13,7 +13,7 @@
 
 .main-img-block{
     display: block;
-    background-image: url(D:\mai2026\Hillel_React_2026\convertor_26\src\Main-container\img\image.png);
+    background-image: url(./img/image.png);
     background-position: center;
     background-size: cover;
     width: 100%;

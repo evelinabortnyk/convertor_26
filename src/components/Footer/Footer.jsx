@@ -1,6 +1,6 @@
 import logo from '../Header/Navigation/img/logo.svg'
 import './footer.css'
-import {linksArr} from '../assets/data.js'
+import {linksArr} from '../../assets/data.js'
 
 function Footer () {
     const iconsArr = [

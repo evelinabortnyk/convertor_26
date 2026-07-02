@@ -37,12 +37,12 @@ footer {
 
 .phone-icon{
     width: 10px;
-    background-image: url(../assets/phone-icon.svg);
+    background-image: url(./img/phone-icon.svg);
 }
 
 .landline-phone-icon{
     width: 16px;
-    background-image: url(../assets/landline-phone-icon.svg);
+    background-image: url(./img/landline-phone-icon.svg);
 }
 
 .footer-column--contacts{
@@ -51,7 +51,7 @@ footer {
 
 .icon-contacts{
     width: 16px;
-    background-image: url(../assets/footer-contacts-icon.svg);
+    background-image: url(./img/footer-contacts-icon.svg);
     background-position-y: 16px;
 }
 

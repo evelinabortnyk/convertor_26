@@ -1,6 +1,6 @@
-import './main-container.css'
+import './home-pages.css'
 
-function Main () {
+function MainContainer () {
 
     return(
         <div className="blocks-container main-container">
@@ -13,4 +13,4 @@ function Main () {
         </div>
     )
 }
-export default Main
+export default MainContainer

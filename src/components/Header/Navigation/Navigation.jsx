@@ -1,6 +1,7 @@
 import logo from './img/logo.svg'
+
 import './navigation.css'
-import {linksArr} from '../../assets/data.js'
+import {linksArr} from '../../../assets/data.js'
 
 function Navigation () {
     
