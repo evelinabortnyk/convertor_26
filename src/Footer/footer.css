@@ -1,0 +1,60 @@
+footer {
+    display: flex;
+    gap: 20px;
+
+    padding: 25px 35px;
+    background-color: #F6F7FF;
+    color: var(--gray) ;
+}
+
+.footer-column{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20%;
+}
+
+.footer-column--title{
+    display: flex;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.footer-column--info{
+    font-size: 13px;
+}
+
+.footer-link{
+    font-size: 16px;
+    padding-bottom: 10px;
+    color: var(--gray) ;
+}
+
+.icon{
+    display: block;
+    height: 16px;
+    margin-right: 15px;
+}
+
+.phone-icon{
+    width: 10px;
+    background-image: url(../assets/phone-icon.svg);
+}
+
+.landline-phone-icon{
+    width: 16px;
+    background-image: url(../assets/landline-phone-icon.svg);
+}
+
+.footer-column--contacts{
+    flex-direction: row;
+}
+
+.icon-contacts{
+    width: 16px;
+    background-image: url(../assets/footer-contacts-icon.svg);
+    background-position-y: 16px;
+}
+
+.icon-facebook {
+    width: 9px;
+}

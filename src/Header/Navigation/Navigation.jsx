@@ -1,14 +1,9 @@
 import logo from './img/logo.svg'
 import './navigation.css'
+import {linksArr} from '../../assets/data.js'
 
 function Navigation () {
-    const linksArr = [
-        {'title': 'Services', 'link' : ''},
-        {'title': 'Converter', 'link' : ''},
-        {'title': 'Contacts', 'link' : ''},
-        {'title': 'Questions', 'link' : ''},
-    ]
-
+    
     return (
         <>
             <div className="navi-wrap">

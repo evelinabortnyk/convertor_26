@@ -57,4 +57,18 @@ h1{
   padding-bottom: 0;
   border: none;
   border-radius: 5px;
+
+}
+
+.logo-wrap{
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrap > p{
+    font-weight: bold;
+}
+
+.logo-wrap > img{
+    margin-right: 10px;
 }
