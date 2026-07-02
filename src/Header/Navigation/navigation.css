@@ -1,5 +1,5 @@
 .navi-wrap{
-    padding: 15px;
+    padding: 25px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,18 +13,11 @@
     
     font-size: 16px;
 }
-.logo-wrap, .navi-btn{
+.navi-btn{
     width: 20%;
-
 }
 
-.logo-wrap > p{
-    font-weight: bold;
-}
 
-.logo-wrap > img{
-    margin-right: 10px;
-}
 
 .navigation{
     justify-content: start;
