@@ -3,7 +3,7 @@ footer {
     gap: 20px;
 
     padding: 25px 35px;
-    background-color: #F6F7FF;
+    background-color: var(--light-gray);
     color: var(--gray) ;
 }
 

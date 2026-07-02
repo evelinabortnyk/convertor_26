@@ -1,0 +1,14 @@
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-block{
+    flex: 1 1 50%;
+    padding: 10% 20%;
+}
+
+.main-block--convertor{
+    background-color: var(--light-gray);
+}
