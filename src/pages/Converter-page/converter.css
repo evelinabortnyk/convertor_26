@@ -6,9 +6,46 @@ main{
 
 .main-block{
     flex: 1 1 50%;
-    padding: 10% 20%;
+    padding: 10%;
 }
 
-.main-block--convertor{
+.main-block--converter{
     background-color: var(--light-gray);
+}
+
+.converter-wrap{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.converter-block{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 20px 0;
+}
+
+.converter-column{
+    flex: 1 1 50%;
+
+}
+
+.feilds-wrap{
+    padding-top: 15px;
+}
+
+.feild{
+    height: 60px;
+    padding: 0 10px;
+}
+
+.feild-input{
+    text-align: center;
+    width: 60%;
+    margin-right: 10px;
 }
