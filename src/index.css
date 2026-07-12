@@ -2,7 +2,7 @@ body{
   font-family: "Roboto", sans-serif;
   max-width: 1200px;
   margin: 0 auto;
-  border: 1px solid var(--blay);
+  border: 1px solid var(--blue);
 }
 
 * {
@@ -13,7 +13,7 @@ body{
 
 :root {
   --gray: #707C87;
-  --blay: #2C36F2;
+  --blue: #2C36F2;
   --light-gray: #F6F7FF;
 }
 
