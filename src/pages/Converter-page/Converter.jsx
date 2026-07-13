@@ -1,8 +1,41 @@
+import { useEffect, useState } from 'react';
 import './converter.css'
 import calendar from './img/calendar-vector.svg'
 import revers from './img/revers-vector.svg'
 
 function Converter() {
+    const today = new Date().toISOString().split("T")[0]
+
+    const [rate, setRate]= useState()
+    const [currentValues, setCurrentValues]= useState({'from': 'UAH',  'to': 'USD', 'amount': 1000, 'date': today, 'result': 38.7})
+
+    function getRate(obj){
+
+        async function getCurrencies() {
+            const response = await fetch(`https://api.frankfurter.dev/v2/rate/${obj.from}/${obj.to}?date=${obj.date}`);
+            const data = await response.json()
+            setRate(data.rate)
+            getResult(data.rate, obj)
+        }
+        getCurrencies()
+    }
+    
+    function handleChange(optionValue, value) {
+        const data = {
+            ...currentValues, [optionValue]: value
+        }
+
+        setCurrentValues(data)
+        getRate(data)
+    }
+
+    function getResult (rate, obj) {
+        const data = {
+            ...obj, 'result': obj.amount * rate
+        }
+        setCurrentValues(data)
+    }
+
     const currenciesArr = [
         { 'title': 'UAH', },
         { 'title': 'USD', },
@@ -18,26 +51,27 @@ function Converter() {
                         <div className="main-column converter-column">
                             <label htmlFor="count-have column-part">I have:</label>
                             <div className="feilds-wrap column-part">
-                                <input type="number" id='feild-wrap' placeholder='1000' className='feild feild--input' />
-                                <select name="cuttentes" id="cuttentes" className='feild feild--select feild--vector'>
+                                <input type="number" id='feild-wrap' placeholder={(currentValues.amount).toFixed(2)} className='feild feild--input' onBlur={(e)=> handleChange('amount',e.target.value )}/>
+                                <select name="currentes" id="currentes" className='feild feild--select feild--vector' onChange={(e)=>handleChange('from', e.target.value)}>
                                     {currenciesArr.map((current, index) => (
                                         <option key={index} value={current.title}>{current.title}</option>
                                     ))}
                                 </select>
                             </div>
                             <div className='date-wrap column-part'>
-                                <input type="date" defaultValue={new Date().toISOString().split("T")[0]} className='feild feild--input feild--data feild--vector' />
+                                <input type="date" defaultValue={today} max={today} className='feild feild--input feild--data feild--vector' onChange={(e) => handleChange('date', e.target.value)}/>
                                 <img src={calendar} alt="calendar" className='calendar-icon' />
                             </div>
+
                         </div>
                         <button className='revers--icon'><img src={revers}  alt="" /></button>
                         <div className="main-column converter-column right-column">
                             <label htmlFor="count-have column-part">I want to buy:</label>
                             <div className="feilds-wrap column-part">
-                                <input type="number" id='feild-wrap' placeholder='38.7' className='feild feild--input' />
-                                <select name="cuttentes" id="cuttentes" className='feild feild--select feild--vector'>
+                                <input type="number" id='feild-wrap' placeholder={(currentValues.result).toFixed(2)} className='feild feild--input' />
+                                <select defaultValue='USD' name="currentes" id="currentes" className='feild feild--select feild--vector' onChange={(e)=> handleChange('to', e.target.value)}>
                                     {currenciesArr.map((current, index) => (
-                                        <option key={index} selected={current.title === 'USD' ? true : false} value={current.title}>{current.title}</option>
+                                        <option key={index}  value={current.title}>{current.title}</option>
                                     ))}
                                 </select>
                             </div>
