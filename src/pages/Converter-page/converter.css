@@ -13,30 +13,37 @@ main{
     background-color: var(--light-gray);
 }
 
-.converter-wrap{
-    position: relative;
+.main-block--wrap{
     display: flex;
     flex-direction: column;
 
     width: 100%;
     max-width: 962px;
-    background-color: #fff;
     padding: 40px;
+}
+
+.converter-wrap{
+    position: relative;
+    
+    background-color: #fff;
 }
 
 .convertor-title{
     font-size: 40px;
 }
 
-.converter-block{
+.columns-wrap{
     display: flex;
     justify-content: space-between;
+} 
+
+.converter-block{
     gap: 80px;
 
     padding: 20px 0;
 }
 
-.converter-column{
+.main-column{
     flex: 1 1 calc(50% - 20px);
 }
 
@@ -45,7 +52,6 @@ main{
     color: var(--gray)
 }
 
-
 .column-part{
     margin-top: 15px;
 }
@@ -53,9 +59,7 @@ main{
 .feild{
     height: 60px;
     padding: 0 10px;
-    min-width: 60%;
-    max-width: 220px;
-
+    
     border: var(--gray) 1px solid;
     border-radius: 4px;
     cursor: pointer;
@@ -64,6 +68,8 @@ main{
 .feild--input{
     text-align: center;
     margin-right: 10px;
+    min-width: 60%;
+    max-width: 220px;
 }
 
 .feild--select{
@@ -117,6 +123,7 @@ main{
 }
 
 .converter--button{
+    width: 220px;
     background-color: var(--blue);
     color: #fff;
 }
@@ -125,6 +132,64 @@ main{
     position: absolute;
     width: 22px;
     height: 22px;
+    border: none;
+    background-color: #fff;
     left: calc(50% - 11px);
     top: calc(50% - 11px);
+}
+
+.history--wrap{
+    background-color: var(--light-gray);
+}
+
+.history--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+}
+
+.history--header > h3{
+    font-size: 28px;
+}
+
+.history--btn{
+    width: 187px;
+    height: 51px;
+    font-size: 16px;
+}
+
+.histori-main-block{
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+}
+
+.history-data-wrap{
+    max-width: calc(50% - 12px);
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.history-data--date{
+    color: #C1C2CA;
+}
+
+.history-data--vector{
+    display: block;
+    width: 16px;
+    height: 12px;
+    background: url(./img/history-vector.svg)  no-repeat center;
+}
+
+.history-data--count{
+    font-weight: 600;
+    color: var(--gray);
 }

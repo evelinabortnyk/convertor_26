@@ -15,8 +15,13 @@ footer {
 
 .footer-column--title{
     display: flex;
+    align-items: center;
     color: black;
     padding-bottom: 10px;
+}
+
+.footer-column--title > p{
+    margin-left: 5px;
 }
 
 .footer-column--info{

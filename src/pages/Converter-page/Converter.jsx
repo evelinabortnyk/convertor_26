@@ -12,10 +12,10 @@ function Converter() {
     return (
         <main>
             <div className='main-block main-block--converter'>
-                <div className='converter-wrap'>
+                <div className='main-block--wrap converter-wrap'>
                     <h3 className='convertor-title '>Currency converter</h3>
-                    <div className='converter-block'>
-                        <div className="converter-column">
+                    <div className='columns-wrap converter-block'>
+                        <div className="main-column converter-column">
                             <label htmlFor="count-have column-part">I have:</label>
                             <div className="feilds-wrap column-part">
                                 <input type="number" id='feild-wrap' placeholder='1000' className='feild feild--input' />
@@ -30,8 +30,8 @@ function Converter() {
                                 <img src={calendar} alt="calendar" className='calendar-icon' />
                             </div>
                         </div>
-                        <img src={revers} className='revers--icon' alt="" />
-                        <div className="converter-column right-column">
+                        <button className='revers--icon'><img src={revers}  alt="" /></button>
+                        <div className="main-column converter-column right-column">
                             <label htmlFor="count-have column-part">I want to buy:</label>
                             <div className="feilds-wrap column-part">
                                 <input type="number" id='feild-wrap' placeholder='38.7' className='feild feild--input' />
@@ -51,7 +51,21 @@ function Converter() {
                 </div>
             </div>
             <div className='main-block main-block--history'>
-
+                <div className="main-block--wrap history--wrap">
+                    <div className='history--header'>
+                        <h3>Conversion history</h3>
+                        <button className='feild converter--button history--btn'>Clear history</button>
+                    </div>
+                    <div className="columns-wrap histori-main-block">
+                        {/* <div className="history-data-wrap">
+                            <p className='history-data--date'>25.11.2020</p>
+                            <p className='history-data--count history-data--have'>1000 UAH</p>
+                            <p className='history-data--vector'></p>
+                            <p className='history-data--count history-data--buy'>36,65 USD</p>
+                        </div> */}
+                    </div>  
+                </div>
+                                       
             </div>
         </main>
     )
