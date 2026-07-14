@@ -1,8 +1,10 @@
 import logo from '../Header/Navigation/img/logo.svg'
 import './footer.css'
 import {linksArr} from '../../assets/data.js'
+import { useRef } from 'react'
 
 function Footer () {
+    const contacts = useRef(null)
     const iconsArr = [
         {'name': 'facebook', 'link': 'https://www.facebook.com/', 'position': '102px',},
         {'name': 'inst', 'link': 'https://www.instagram.com/', 'position': '78px',},
@@ -10,7 +12,7 @@ function Footer () {
         {'name': 'yooutube', 'link': 'https://www.youtube.com/', 'position': '16px',},
     ]
     return (
-        <footer>
+        <footer id='contacts'>
             <div className="footer-column">
                 <div className="footer-column--title"><img src={logo} alt='logo' /><p>Chip Challenge</p></div>
                 <p className='footer-column--info'>

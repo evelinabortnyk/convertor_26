@@ -1,4 +1,5 @@
 import './home-pages.css'
+import { Link } from 'react-router-dom'
 
 function MainContainer () {
 
@@ -7,7 +8,7 @@ function MainContainer () {
             <div className="block-wrap main-text-block">
                 <h2>Currency convertor</h2>
                 <p>The predominant activity of the banking group for the last four reporting quarters is 50 percent or more.</p>
-                <button className="block-btn main-btn">Convert currency</button>
+                <Link to='converter'><button className="block-btn main-btn">Convert currency</button></Link>
             </div>
             <div className="block-wrap main-img-block"></div>
         </div>
