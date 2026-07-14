@@ -75,7 +75,7 @@ function Converter() {
                                     ))}
                                 </select>
                             </div>
-                            <div className='date-wrap column-part'>
+                            <div className='date-wrap column-part dekstop--version'>
                                 <input type="date" defaultValue={today} max={today} className='feild feild--input feild--data feild--vector' onChange={(e) => handleChange('date', e.target.value)} />
                                 <img src={calendar} alt="calendar" className='calendar-icon' />
                             </div>
@@ -93,6 +93,8 @@ function Converter() {
                                 </select>
                             </div>
                             <div className='button-wrap column-part'>
+                                <input type="date" defaultValue={today} max={today} className='feild feild--input feild--data feild--vector mobile--version' onChange={(e) => handleChange('date', e.target.value)} />
+                                <img src={calendar} alt="calendar" className='calendar-icon mobile--version' />
                                 <button className='feild converter--button' onClick={() => saveResult()}>Save the result</button>
                             </div>
 

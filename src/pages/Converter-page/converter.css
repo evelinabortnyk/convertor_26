@@ -1,5 +1,4 @@
 main{
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -34,6 +33,7 @@ main{
 
 .columns-wrap{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 } 
 
@@ -53,6 +53,9 @@ main{
 }
 
 .column-part{
+    position: relative;
+    display: flex;
+    align-items: center;
     margin-top: 15px;
 }
 
@@ -87,11 +90,12 @@ main{
     background-size: 16px;
 }
 
+.dekstop--version{
+    display: none;    
+}
+
 .date-wrap{
     width: 100%;
-
-    position: relative;
-    display: inline-block;
 }
 
 .feild--data{
@@ -121,7 +125,7 @@ main{
 
 .button-wrap{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .converter--button{
@@ -136,8 +140,8 @@ main{
     height: 22px;
     border: none;
     background-color: #fff;
-    left: calc(50% - 11px);
     top: calc(50% - 11px);
+    left: 50%;
 }
 
 .history--wrap{
@@ -169,7 +173,6 @@ main{
 }
 
 .history-data-wrap{
-    max-width: calc(50% - 12px);
     flex: 1 1 50%;
     display: flex;
     align-items: center;
@@ -177,6 +180,7 @@ main{
     padding: 10px;
     
     font-size: 18px;
+    text-align: center;
     background-color: #fff;
 }
 
@@ -194,4 +198,36 @@ main{
 .history-data--count{
     font-weight: 600;
     color: var(--gray);
+}
+
+@media (min-width: 768px) {
+    .histori-main-block{
+        flex-direction: row;
+    }
+
+    .history-data-wrap{
+        max-width: calc(50% - 12px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .columns-wrap{
+        flex-direction: row;
+    }
+
+    .dekstop--version{
+        display: flex;
+    }
+    
+    .mobile--version{
+        display: none;
+    }
+
+    .button-wrap{
+        justify-content: end;
+    }
+
+    .revers--icon{
+        left: calc(50% - 11px);
+    }
 }
