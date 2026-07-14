@@ -60,7 +60,7 @@ function Converter() {
     }
 
     return (
-        <main>
+        <main id='converter'>
             <div className='main-block main-block--converter'>
                 <div className='main-block--wrap converter-wrap'>
                     <h3 className='convertor-title '>Currency converter</h3>

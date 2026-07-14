@@ -12,8 +12,8 @@ function Navigation () {
                 <div className="navi-container logo-wrap"><img src={logo} alt='logo' /><p>Chip Challenge</p></div>
                 <nav className='navi-container navigation'>
                     {linksArr.map((link, index) => (
-                        link.action === 'contacts' ? (
-                            <Link to={link.link} key={index} onClick={()=> document.getElementById('contacts')?.scrollIntoView({behavior: "smooth"})}>
+                        link.action ? (
+                            <Link to={link.link} key={index} onClick={()=> document.getElementById(`${link.action}`)?.scrollIntoView({behavior: "smooth"})}>
                                 <li >{link.title}</li>
                             </Link>
                         ) : (
