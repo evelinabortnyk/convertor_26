@@ -22,13 +22,17 @@ a{
   color: black;
 }
 
-a:hover{
-  color: #2C36F2;
-}
-
 h1{
   font-size: 52px;
   text-align: center;
+}
+
+li{
+  list-style: none;
+  padding: 0 20px;
+}
+li:hover{
+  color: #2C36F2;
 }
 
 button{

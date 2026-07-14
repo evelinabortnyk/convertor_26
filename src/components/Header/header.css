@@ -1,5 +1,6 @@
 .header-container {
     min-height: 400px;
+    padding: calc(10% + 40px);
 
     background-image: url(./img/background.png);
     background-position: center;

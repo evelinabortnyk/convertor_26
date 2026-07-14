@@ -1,10 +1,9 @@
 import logo from '../Header/Navigation/img/logo.svg'
 import './footer.css'
 import {linksArr} from '../../assets/data.js'
-import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer () {
-    const contacts = useRef(null)
     const iconsArr = [
         {'name': 'facebook', 'link': 'https://www.facebook.com/', 'position': '102px',},
         {'name': 'inst', 'link': 'https://www.instagram.com/', 'position': '78px',},
@@ -23,7 +22,14 @@ function Footer () {
             </div>
             <nav className="footer-column footer-column--nav">
                 {linksArr.map((link, index) => (
-                    <a key={index} className='footer-link' href={link.link}>{link.title}</a>
+                    link.action ? (
+                        <Link to={link.link} key={index} onClick={()=> document.getElementById(`${link.action}`)?.scrollIntoView({behavior: "smooth"})}>
+                            <li className='footer-link'>{link.title}</li>
+                        </Link>
+                    ) : (
+                        <Link key={index} to={link.link} ><li className='footer-link'>{link.title}</li></Link>
+                    )
+                    // <a key={index} className='footer-link' href={link.link}>{link.title}</a>
                 ))}
             </nav>
             <div className="footer-column">

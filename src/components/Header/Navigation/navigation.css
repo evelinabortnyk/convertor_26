@@ -27,11 +27,6 @@
     width: 70%;
 }
 
-.navigation li{
-    list-style: none;
-    padding: 0 20px;
-}
-
 .navi-btn{
     display: none;
     justify-content: end;

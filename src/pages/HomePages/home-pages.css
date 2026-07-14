@@ -1,6 +1,6 @@
 .main-container{
     min-height: 554px;
-    padding: 20vh;
+    padding: calc(10% + 40px);
 }
 
 .main-text-block{
