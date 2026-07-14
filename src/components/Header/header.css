@@ -1,18 +1,29 @@
-.header-container{
-  background-image: url(./img/background.png);
-  background-position: center;
-  background-size: cover;
-  height: 400px;
+.header-container {
+    min-height: 400px;
+
+    background-image: url(./img/background.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .header-block{
+    max-height: 50%;
     color: #fff;
 }
 
-.header-img{
-    max-width: 341px;;
+.header-block *{
+    padding-bottom: 20px;
 }
 
 .header-btn {
+    width: 234px;
+    height: 53px;
+    padding-bottom: 0;
+
+    border: none;
+
+    border-radius: 5px;
     color: var(--gray);
 }
+
+
