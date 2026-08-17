@@ -6,8 +6,11 @@ import reversIcon from './img/revers-vector.svg'
 function Converter() {
     const today = new Date().toISOString().split("T")[0]
 
-    const [currentValues, setCurrentValues] = useState({ 'from': 'UAH', 'to': 'USD', 'amount': 1000, 'date': today, 'result': 38.7 })
-    const [results, setResults] = useState([])
+    const [currentValues, setCurrentValues] = useState({})
+
+    const [result, setResult] = useState([])
+
+    const previewValues = { 'from': 'UAH', 'to': 'USD', 'amount': 1000, 'date': today, 'result': 38.7 }
 
     const currenciesArr = [
         { 'title': 'UAH', },
@@ -15,38 +18,45 @@ function Converter() {
         { 'title': 'EUR', },
     ]
 
-    function getRate(obj) {
+    function getRate(optionalValue, obj) {
 
         async function getCurrencies() {
             const response = await fetch(`https://api.frankfurter.dev/v2/rate/${obj.from}/${obj.to}?date=${obj.date}`);
             const data = await response.json()
-
-            getResult(data.rate, obj)
+            getResult(optionalValue, data.rate, obj)
         }
         getCurrencies()
     }
 
     function handleChange(optionValue, value) {
         const data = {
-            ...currentValues, [optionValue]: value
+            ...Object.keys(currentValues).length !== 0 ? currentValues : previewValues, 
+            [optionValue]: value
         }
         setCurrentValues(data)
-        getRate(data)
+        getRate(optionValue, data)
     }
 
-    function getResult(rate, obj) {
-        const data = {
+    function getResult(optionValue, rate, obj) {
+        const data = optionValue === 'amount' || optionValue ===  'from' ?  {
             ...obj, 'result': obj.amount * rate
+        } 
+            : 
+        {
+            ...obj, 'amount': obj.result / rate
         }
         setCurrentValues(data)
     }
 
     function saveResult() {
-        const data = [
-            ...results, currentValues
-        ]
-        setResults(data)
+
+        const data = Object.keys(currentValues).length !== 0 ? [
+            ...result, currentValues
+        ] : [previewValues]
+
+        setResult(data)
     }
+
     function revers() {
         const data = {
             ...currentValues,
@@ -68,7 +78,7 @@ function Converter() {
                         <div className="main-column converter-column">
                             <label htmlFor="count-have column-part">I have:</label>
                             <div className="feilds-wrap column-part">
-                                <input type="number" id='feild-wrap' placeholder={currentValues.amount} className='feild feild--input' onBlur={(e) => handleChange('amount', e.target.value)} />
+                                <input type="number" id='feild-wrap' key={currentValues.amount} placeholder={currentValues.amount ? (+currentValues.amount).toFixed(4) : previewValues.amount} className='feild feild--input' onBlur={(e) => handleChange('amount', e.target.value)} />
                                 <select name="currentes" id="currentes" value={currentValues.from} className='feild feild--select feild--vector' onChange={(e) => handleChange('from', e.target.value)}>
                                     {currenciesArr.map((current, index) => (
                                         <option key={index} value={current.title}>{current.title}</option>
@@ -85,7 +95,7 @@ function Converter() {
                         <div className="main-column converter-column right-column">
                             <label htmlFor="count-have column-part">I want to buy:</label>
                             <div className="feilds-wrap column-part">
-                                <input type="number" id='feild-wrap' placeholder={(+currentValues.result).toFixed(2)} className='feild feild--input' />
+                                <input type="number" id='feild-wrap' key={currentValues.result } placeholder={currentValues.result ? (+currentValues.result).toFixed(4) : previewValues.result} className='feild feild--input' onBlur={(e) => handleChange('result', e.target.value)}/>
                                 <select value={currentValues.to} name="currentes" id="currentes" className='feild feild--select feild--vector' onChange={(e) => handleChange('to', e.target.value)}>
                                     {currenciesArr.map((current, index) => (
                                         <option key={index} value={current.title}>{current.title}</option>
@@ -107,10 +117,10 @@ function Converter() {
                 <div className="main-block--wrap history--wrap">
                     <div className='history--header'>
                         <h3>Conversion history</h3>
-                        <button className='feild converter--button history--btn' onClick={() => setResults([])}>Clear history</button>
+                        <button className='feild converter--button history--btn' onClick={() => setResult([])}>Clear history</button>
                     </div>
                     <div className="columns-wrap histori-main-block">
-                        {results.map((item, index) => (
+                        {result.map((item, index) => (
                             <div className="history-data-wrap" key={index}>
                                 <p className='history-data--date'>{item.date}</p>
                                 <p className='history-data--count history-data--have'>{item.amount} {item.from}</p>
